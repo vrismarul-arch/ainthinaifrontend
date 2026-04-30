@@ -1,0 +1,689 @@
+/* ========================= */
+/* GOOGLE FONT */
+/* ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ========================= */
+/* USER BOOKING DETAILS */
+/* ========================= */
+.user-booking-details {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  margin-top: 80px;
+  padding: 24px 20px 60px;
+  font-family: 'Poppins', sans-serif;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+.details-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0 30px;
+}
+
+.details-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #3e2723, #3e2723);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.details-header h1:hover {
+  transform: translateY(-3px);
+  letter-spacing: 0.5px;
+}
+
+.back-button {
+  color: #3e2723 !important;
+  font-weight: 500 !important;
+  padding: 8px 16px !important;
+  border-radius: 14px !important;
+  transition: 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.back-button:hover {
+  background: #f5ebe0 !important;
+  transform: translateX(-5px);
+}
+
+/* ========================= */
+/* STATUS BANNER */
+/* ========================= */
+.status-banner {
+  padding: 20px 25px;
+  margin-bottom: 30px;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+  transition: 0.4s ease;
+}
+
+.status-banner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+}
+
+.status-banner.pending {
+  border-left: 6px solid #faad14;
+}
+
+.status-banner.confirmed {
+  border-left: 6px solid #1890ff;
+}
+
+.status-banner.completed {
+  border-left: 6px solid #52c41a;
+}
+
+.status-banner.cancelled {
+  border-left: 6px solid #f5222d;
+}
+
+.status-tag-large {
+  font-size: 16px !important;
+  padding: 8px 20px !important;
+  border-radius: 40px !important;
+  font-weight: 600 !important;
+}
+
+.booking-id {
+  font-size: 14px;
+  color: #666;
+  font-family: 'Poppins', monospace;
+  background: #f5f5f5;
+  padding: 8px 16px;
+  border-radius: 40px;
+}
+
+/* ========================= */
+/* DETAIL CARDS */
+/* ========================= */
+.detail-card {
+  margin-bottom: 25px;
+  border-radius: 26px !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07) !important;
+  transition: 0.4s ease !important;
+  overflow: hidden;
+  border: none !important;
+}
+
+.detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12) !important;
+}
+
+.detail-card .ant-card-head {
+  background: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 0 24px;
+  min-height: 60px;
+}
+
+.detail-card .ant-card-head-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #3e2723;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-card .ant-card-head-title svg {
+  color: #3e2723;
+  font-size: 20px;
+}
+
+.detail-card .ant-card-body {
+  padding: 24px;
+}
+
+/* ========================= */
+/* DESCRIPTIONS */
+/* ========================= */
+.ant-descriptions-bordered .ant-descriptions-view {
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-label {
+  background: #fafafa !important;
+  font-weight: 600 !important;
+  color: #3e2723 !important;
+  width: 120px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-content {
+  background: white !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ========================= */
+/* STAY INFORMATION */
+/* ========================= */
+.stay-info-item {
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+.stay-info-item:hover {
+  background: #f5ebe0;
+  transform: translateY(-2px);
+}
+
+.stay-info-item .label {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.stay-info-item .value {
+  font-size: 16px;
+  color: #1f1f1f;
+  font-weight: 600;
+}
+
+.stay-info-item.duration {
+  background: #e6f7ff;
+}
+
+.duration-tag {
+  margin-left: 8px;
+  border-radius: 40px !important;
+  padding: 4px 12px !important;
+  font-weight: 600 !important;
+}
+
+/* ========================= */
+/* PAYMENT TYPE */
+/* ========================= */
+.payment-type {
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.3s ease;
+}
+
+.payment-type:hover {
+  background: #f5ebe0;
+}
+
+.payment-type .label {
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
+}
+
+/* ========================= */
+/* TOUR DETAILS CARD */
+/* ========================= */
+.tour-details-card {
+  margin-top: 10px;
+}
+
+.tour-loading {
+  text-align: center;
+  padding: 60px;
+}
+
+.tour-loading p {
+  margin-top: 16px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* ========================= */
+/* INNER CARDS */
+/* ========================= */
+.inner-card {
+  margin-bottom: 16px;
+  background: #fafafa !important;
+  border-radius: 20px !important;
+  border: none !important;
+}
+
+.inner-card:last-child {
+  margin-bottom: 0;
+}
+
+.inner-card .ant-card-head {
+  background: transparent !important;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.inner-card .ant-card-head-title {
+  font-size: 16px;
+  color: #3e2723;
+}
+
+/* ========================= */
+/* TOUR DESCRIPTION */
+/* ========================= */
+.tour-description {
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ========================= */
+/* DURATION INFO */
+/* ========================= */
+.duration-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  color: #3e2723;
+  padding: 16px;
+  background: #e6f7ff;
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+/* ========================= */
+/* TAGS CONTAINER */
+/* ========================= */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 20px;
+}
+
+.feature-tag {
+  padding: 6px 16px !important;
+  font-size: 13px !important;
+  border-radius: 40px !important;
+  font-weight: 500 !important;
+  transition: 0.3s ease !important;
+}
+
+.feature-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ========================= */
+/* GALLERY GRID */
+/* ========================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.gallery-image {
+  object-fit: cover;
+  border-radius: 16px !important;
+  transition: 0.4s ease !important;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-image:hover {
+  transform: scale(1.08) translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* ========================= */
+/* MAIN IMAGE */
+/* ========================= */
+.main-image {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ========================= */
+/* MAP CONTAINER */
+/* ========================= */
+.map-container {
+  margin-bottom: 16px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.map-link {
+  display: block;
+  text-align: center;
+  color: #3e2723 !important;
+  font-weight: 600 !important;
+  transition: 0.3s ease !important;
+}
+
+.map-link:hover {
+  color: #5a3a34 !important;
+  transform: translateX(5px);
+}
+
+/* ========================= */
+/* TRAVELER CARDS */
+/* ========================= */
+.traveler-card {
+  height: 100%;
+  transition: 0.4s ease !important;
+  border-radius: 20px !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05) !important;
+  overflow: hidden;
+}
+
+.traveler-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(62, 39, 35, 0.15) !important;
+}
+
+.traveler-card.adult {
+  border-left: 4px solid #52c41a;
+}
+
+.traveler-card.child {
+  border-left: 4px solid #faad14;
+}
+
+.traveler-card-header {
+  margin-bottom: 15px;
+  padding: 15px 15px 10px;
+  border-bottom: 1px dashed #f0f0f0;
+  background: #fafafa;
+}
+
+.traveler-card-header .ant-badge {
+  font-weight: 600;
+}
+
+.traveler-card-content {
+  padding: 0 15px 15px;
+}
+
+.traveler-card-content p {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #333;
+}
+
+.traveler-card-content p strong {
+  color: #3e2723;
+  font-weight: 600;
+}
+
+/* ========================= */
+/* TABS STYLING */
+/* ========================= */
+.ant-tabs-tab {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 500 !important;
+  transition: 0.3s ease !important;
+  padding: 8px 16px !important;
+}
+
+.ant-tabs-tab:hover {
+  color: #3e2723 !important;
+  background: #f5ebe0 !important;
+  border-radius: 40px !important;
+}
+
+.ant-tabs-tab-active {
+  font-weight: 700 !important;
+}
+
+.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #3e2723 !important;
+}
+
+.ant-tabs-ink-bar {
+  background: #3e2723 !important;
+}
+
+/* ========================= */
+/* STATISTICS */
+/* ========================= */
+.ant-statistic-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px !important;
+  color: #888 !important;
+  font-weight: 500 !important;
+}
+
+.ant-statistic-content {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700 !important;
+  color: #3e2723 !important;
+}
+
+/* ========================= */
+/* LOADING STATES */
+/* ========================= */
+.loading-container, .error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  gap: 20px;
+  background: white;
+  border-radius: 26px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+  padding: 48px;
+}
+
+.loading-container p {
+  color: #666;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.error-container {
+  background: white;
+}
+
+.error-container .ant-empty-description {
+  color: #f5222d;
+  font-weight: 500;
+}
+
+.error-container .ant-btn {
+  background: #3e2723 !important;
+  border: none !important;
+  border-radius: 40px !important;
+  padding: 8px 24px !important;
+  height: auto !important;
+  font-weight: 600 !important;
+  transition: 0.3s ease !important;
+}
+
+.error-container .ant-btn:hover {
+  background: #5a3a34 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(62, 39, 35, 0.3) !important;
+}
+
+/* ========================= */
+/* RESPONSIVE DESIGN */
+/* ========================= */
+@media (max-width: 1200px) {
+  .user-booking-details {
+    padding: 20px;
+  }
+  
+  .details-header h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 992px) {
+  .details-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .details-header h1 {
+    font-size: 32px;
+  }
+  
+  .status-banner {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .user-booking-details {
+    padding: 16px;
+  }
+  
+  .details-header h1 {
+    font-size: 28px;
+  }
+  
+  .detail-card .ant-card-body {
+    padding: 16px;
+  }
+  
+  .stay-info-item {
+    padding: 12px;
+  }
+  
+  .payment-type {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .feature-tag {
+    font-size: 12px !important;
+    padding: 4px 12px !important;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 8px;
+  }
+  
+  .tour-description {
+    font-size: 13px;
+  }
+  
+  .ant-descriptions-bordered .ant-descriptions-item-label {
+    width: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .details-header h1 {
+    font-size: 24px;
+  }
+  
+  .status-tag-large {
+    font-size: 14px !important;
+    padding: 6px 16px !important;
+  }
+  
+  .booking-id {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  .detail-card .ant-card-head-title {
+    font-size: 16px;
+  }
+  
+  .stay-info-item .value {
+    font-size: 14px;
+  }
+  
+  .ant-statistic-content {
+    font-size: 20px !important;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
+}
+
+/* ========================= */
+/* ANT DESIGN OVERRIDES */
+/* ========================= */
+.ant-card {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.ant-tag {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.ant-badge {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.ant-btn {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.ant-spin {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.ant-spin-dot-item {
+  background-color: #3e2723 !important;
+}
+
+/* ========================= */
+/* CUSTOM SCROLLBAR */
+/* ========================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3e2723;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a3a34;
+}

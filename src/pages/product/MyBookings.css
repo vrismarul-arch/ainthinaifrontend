@@ -1,0 +1,562 @@
+/* ========================= */
+/* GOOGLE FONT */
+/* ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ========================= */
+/* MY BOOKINGS */
+/* ========================= */
+.my-bookings {
+  margin-top: 80px;
+  padding: 24px 20px 60px;
+  background: #f8f9fa;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+.bookings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 30px;
+}
+
+.bookings-header h1 {
+  margin: 0;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #3e2723, #3e2723);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.bookings-header h1:hover {
+  transform: translateY(-3px);
+  letter-spacing: 0.5px;
+}
+
+.bookings-header .ant-btn {
+  background: #3e2723 !important;
+  color: white !important;
+  padding: 8px 24px !important;
+  border-radius: 40px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  height: auto !important;
+  transition: 0.3s ease !important;
+  box-shadow: 0 8px 20px rgba(62, 39, 35, 0.2) !important;
+}
+
+.bookings-header .ant-btn:hover {
+  background: #5a3a34 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(62, 39, 35, 0.3) !important;
+}
+
+.bookings-header .ant-btn:active {
+  transform: translateY(-1px);
+}
+
+/* ========================= */
+/* LOADING CONTAINER */
+/* ========================= */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  gap: 20px;
+  background: white;
+  border-radius: 26px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+  padding: 48px;
+}
+
+.loading-container p {
+  color: #666;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.loading-container .ant-spin-dot-item {
+  background-color: #3e2723 !important;
+}
+
+/* ========================= */
+/* EMPTY CARD */
+/* ========================= */
+.empty-card {
+  text-align: center;
+  padding: 60px;
+  border-radius: 26px !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07) !important;
+  border: none !important;
+  transition: 0.4s ease !important;
+  background: white !important;
+}
+
+.empty-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12) !important;
+}
+
+.empty-card .ant-empty-description {
+  font-family: 'Poppins', sans-serif;
+  color: #666;
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.empty-card .ant-btn {
+  margin-top: 24px;
+  background: #3e2723 !important;
+  color: white !important;
+  padding: 10px 28px !important;
+  border-radius: 40px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  height: auto !important;
+  transition: 0.3s ease !important;
+  box-shadow: 0 8px 20px rgba(62, 39, 35, 0.2) !important;
+}
+
+.empty-card .ant-btn:hover {
+  background: #5a3a34 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(62, 39, 35, 0.3) !important;
+}
+
+/* ========================= */
+/* BOOKINGS TABLE */
+/* ========================= */
+.bookings-table {
+  background: white;
+  border-radius: 26px !important;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07) !important;
+  transition: 0.4s ease;
+}
+
+.bookings-table:hover {
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12) !important;
+}
+
+.bookings-table .ant-table {
+  font-family: 'Poppins', sans-serif !important;
+  border-radius: 26px !important;
+}
+
+.bookings-table .ant-table-thead > tr > th {
+  background: #fafafa !important;
+  color: #3e2723 !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  padding: 16px !important;
+  border-bottom: 2px solid #f0f0f0 !important;
+}
+
+.bookings-table .ant-table-tbody > tr > td {
+  padding: 16px !important;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.bookings-table .ant-table-tbody > tr:hover > td {
+  background: #f5ebe0 !important;
+}
+
+/* ========================= */
+/* BOOKING ID */
+/* ========================= */
+.booking-id {
+  font-family: 'Poppins', monospace;
+  font-weight: 700;
+  color: #3e2723;
+  background: #f5ebe0;
+  padding: 4px 12px;
+  border-radius: 40px;
+  display: inline-block;
+  font-size: 13px;
+}
+
+/* ========================= */
+/* AMOUNT */
+/* ========================= */
+.amount {
+  font-weight: 700;
+  color: #3e2723;
+  font-size: 16px;
+  background: #e6f7ff;
+  padding: 4px 12px;
+  border-radius: 40px;
+  display: inline-block;
+}
+
+/* ========================= */
+/* EXPANDED DETAILS */
+/* ========================= */
+.expanded-details {
+  padding: 24px;
+  background: #fafafa;
+  border-radius: 20px;
+  margin: 0 16px 16px 16px;
+  transition: 0.3s ease;
+}
+
+.expanded-details:hover {
+  background: #f5ebe0;
+}
+
+.expanded-details h4 {
+  margin: 0 0 16px 0;
+  color: #3e2723;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.travelers-section {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  transition: 0.3s ease;
+}
+
+.travelers-section:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.travelers-section:last-child {
+  margin-bottom: 0;
+}
+
+.travelers-section h5 {
+  margin: 0 0 12px 0;
+  color: #3e2723;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.travelers-section h5::before {
+  content: '';
+  width: 4px;
+  height: 16px;
+  background: #3e2723;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.traveler-detail {
+  padding: 8px 12px;
+  color: #333;
+  font-size: 14px;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 4px;
+  transition: 0.3s ease;
+}
+
+.traveler-detail:hover {
+  background: #e6f7ff;
+  transform: translateX(5px);
+}
+
+.traveler-detail:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================= */
+/* TABLE TAGS */
+/* ========================= */
+.bookings-table .ant-tag {
+  font-family: 'Poppins', sans-serif !important;
+  padding: 4px 12px !important;
+  border-radius: 40px !important;
+  font-weight: 500 !important;
+  border: none !important;
+}
+
+.bookings-table .ant-tag-orange {
+  background: #fff7e6 !important;
+  color: #fa8c16 !important;
+}
+
+.bookings-table .ant-tag-blue {
+  background: #e6f7ff !important;
+  color: #1890ff !important;
+}
+
+.bookings-table .ant-tag-green {
+  background: #f6ffed !important;
+  color: #52c41a !important;
+}
+
+.bookings-table .ant-tag-red {
+  background: #fff1f0 !important;
+  color: #f5222d !important;
+}
+
+/* ========================= */
+/* TABLE BUTTONS */
+/* ========================= */
+.bookings-table .ant-btn-primary {
+  background: #3e2723 !important;
+  border: none !important;
+  border-radius: 40px !important;
+  padding: 6px 16px !important;
+  height: auto !important;
+  font-weight: 600 !important;
+  transition: 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(62, 39, 35, 0.2) !important;
+}
+
+.bookings-table .ant-btn-primary:hover {
+  background: #5a3a34 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(62, 39, 35, 0.3) !important;
+}
+
+.bookings-table .ant-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ========================= */
+/* PAGINATION */
+/* ========================= */
+.bookings-table .ant-pagination-item {
+  border-radius: 40px !important;
+  font-family: 'Poppins', sans-serif !important;
+  transition: 0.3s ease !important;
+}
+
+.bookings-table .ant-pagination-item:hover {
+  border-color: #3e2723 !important;
+}
+
+.bookings-table .ant-pagination-item:hover a {
+  color: #3e2723 !important;
+}
+
+.bookings-table .ant-pagination-item-active {
+  background: #3e2723 !important;
+  border-color: #3e2723 !important;
+}
+
+.bookings-table .ant-pagination-item-active a {
+  color: white !important;
+}
+
+.bookings-table .ant-pagination-item-active:hover a {
+  color: white !important;
+}
+
+.bookings-table .ant-pagination-prev .ant-pagination-item-link,
+.bookings-table .ant-pagination-next .ant-pagination-item-link {
+  border-radius: 40px !important;
+  transition: 0.3s ease !important;
+}
+
+.bookings-table .ant-pagination-prev:hover .ant-pagination-item-link,
+.bookings-table .ant-pagination-next:hover .ant-pagination-item-link {
+  border-color: #3e2723 !important;
+  color: #3e2723 !important;
+}
+
+/* ========================= */
+/* STATUS COLORS */
+/* ========================= */
+.status-pending {
+  color: #fa8c16;
+  font-weight: 600;
+}
+
+.status-confirmed {
+  color: #1890ff;
+  font-weight: 600;
+}
+
+.status-completed {
+  color: #52c41a;
+  font-weight: 600;
+}
+
+.status-cancelled {
+  color: #f5222d;
+  font-weight: 600;
+}
+
+/* ========================= */
+/* DATE FORMAT */
+/* ========================= */
+.date-cell {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+@media (max-width: 1200px) {
+  .my-bookings {
+    padding: 20px;
+  }
+  
+  .bookings-header h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 992px) {
+  .bookings-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .bookings-header h1 {
+    font-size: 32px;
+  }
+  
+  .bookings-table .ant-table-thead > tr > th,
+  .bookings-table .ant-table-tbody > tr > td {
+    padding: 12px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .my-bookings {
+    margin-top: 60px;
+    padding: 16px;
+  }
+
+  .bookings-header h1 {
+    font-size: 28px;
+  }
+  
+  .bookings-table .ant-table-thead > tr > th,
+  .bookings-table .ant-table-tbody > tr > td {
+    padding: 10px !important;
+    font-size: 13px;
+  }
+  
+  .booking-id, .amount {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+  
+  .expanded-details {
+    padding: 16px;
+  }
+  
+  .travelers-section {
+    padding: 12px;
+  }
+  
+  .traveler-detail {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bookings-header h1 {
+    font-size: 24px;
+  }
+  
+  .bookings-header .ant-btn {
+    padding: 6px 20px !important;
+    font-size: 13px !important;
+  }
+  
+  .expanded-details {
+    padding: 12px;
+    margin: 0 8px 8px 8px;
+  }
+  
+  .travelers-section h5 {
+    font-size: 14px;
+  }
+  
+  .traveler-detail {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-bookings {
+    margin-top: 50px;
+    padding: 12px;
+  }
+  
+  .bookings-header h1 {
+    font-size: 22px;
+  }
+  
+  .bookings-header .ant-btn {
+    width: 100%;
+  }
+}
+
+/* ========================= */
+/* CUSTOM SCROLLBAR */
+/* ========================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3e2723;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a3a34;
+}
+
+/* ========================= */
+/* ANT DESIGN OVERRIDES */
+/* ========================= */
+.ant-table-wrapper {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.ant-table {
+  border-radius: 26px !important;
+}
+
+.ant-empty {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.ant-spin {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.ant-spin-dot-item {
+  background-color: #3e2723 !important;
+} 

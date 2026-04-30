@@ -1,0 +1,240 @@
+/* =============================== */
+/* HERO SECTION */
+/* =============================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-image: url("./bg.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.hero-subtitle{
+  color: white;
+}
+/* Dark overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.6)); */
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  top: -90px;
+  text-align: left;
+  max-width: 900px;
+  width: 100%;
+}
+
+/* =============================== */
+/* HERO TEXT */
+/* =============================== */
+
+.sub-title {
+  font-size: 28px;
+  font-weight: 500;
+  color: white;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.main-title {
+  font-size: 34px;
+  color: white;
+  font-weight: 700;
+  margin: 10px 0 20px;
+  line-height: 1.1;
+}
+
+/* =============================== */
+/* VERIFIED BADGE (ANIMATED) */
+/* =============================== */
+
+.verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background: rgb(0 0 0 / 38%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  font-size: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Text animation */
+.verified span {
+  display: inline-block;
+  animation: fadeText 6s infinite;
+}
+
+/* Fade animation */
+@keyframes fadeText {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* =============================== */
+/* GLASS SEARCH */
+/* =============================== */
+
+.glass-search {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 10px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  padding: 14px;
+  border-radius: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Ant Design overrides */
+
+.glass-search .ant-input,
+.glass-search .ant-picker,
+.glass-search .ant-select-selector {
+  background: transparent !important;
+  color: white !important;
+  border: none !important;
+}
+
+.glass-search input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.go-btn {
+  background: linear-gradient(90deg, #ff7a18, #ff9f43);
+  border: none !important;
+  color: white;
+  border-radius: 40px;
+  padding: 0 24px;
+  font-weight: bold;
+  height: 45px;
+}
+
+/* =============================== */
+/* TABLET */
+/* =============================== */
+
+@media (max-width: 992px) {
+
+  .main-title {
+    font-size: 50px;
+  }
+
+  .glass-search {
+    grid-template-columns: 1fr 1fr;
+    border-radius: 30px;
+  }
+}
+
+/* =============================== */
+/* MOBILE */
+/* =============================== */
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 100vh;
+    padding-top: 100px;
+    align-items: flex-start;
+    background-position: center top;
+  }
+
+  .hero-content {
+    text-align: center;
+      top: 0px;
+
+  }
+
+  .sub-title {
+    font-size: 20px;
+  }
+
+  .main-title {
+    font-size: 36px;
+  }
+
+  .verified {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .glass-search {
+    grid-template-columns: 1fr;
+    border-radius: 20px;
+    padding: 16px;
+  }
+
+  .go-btn {
+    width: 100%;
+  }
+}
+
+/* =============================== */
+/* SMALL MOBILE */
+/* =============================== */
+
+@media (max-width: 480px) {
+
+  .main-title {
+    font-size: 30px;
+  }
+
+  .sub-title {
+    font-size: 18px;
+  }
+
+  .glass-search {
+    padding: 14px;
+  }
+}

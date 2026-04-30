@@ -1,0 +1,83 @@
+/* Main Wrapper */
+.split-screen {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Left Side Styling */
+.left-side {
+  flex: 1;
+  background: url('./bg.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Dark overlay to make text readable on the image */
+.left-side::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.overlay {
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay h1 { font-size: 3rem; margin-bottom: 10px;  color: #ffffff;}
+
+/* Right Side Styling */
+.right-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 380px;
+  padding: 40px;
+}
+
+.form-wrapper h2 { font-size: 2rem; color: #333; margin-bottom: 5px; }
+.subtitle { color: #888; margin-bottom: 30px; font-size: 0.9rem; }
+
+/* Form Elements */
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; }
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.login-btn {
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-btn:hover { background-color: #1d4ed8; }
+
+/* Responsive: Stack vertically on small screens */
+@media (max-width: 768px) {
+  .split-screen { flex-direction: column; }
+  .left-side { display: none; } /* Hide image on mobile for better UX */
+}

@@ -1,0 +1,92 @@
+/* ============================ */
+/* CARD */
+/* ============================ */
+
+.elite-guest-card {
+  /* width: 340px; */
+  background: #f8f8f8;
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  font-family: 'Inter', sans-serif;
+}
+
+/* ============================ */
+/* ROW */
+/* ============================ */
+
+.guest-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px;
+}
+
+/* ============================ */
+/* LABEL */
+/* ============================ */
+
+.guest-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #5a2a00; /* dark brown like image */
+}
+
+/* ============================ */
+/* NUMBER INPUT */
+/* ============================ */
+
+.guest-input {
+  width: 75px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1.5px solid #ff7a18;
+  outline: none;
+  text-align: center;
+  font-size: 14px;
+  background: #f2f2f2;
+  color: #444;
+  transition: 0.2s;
+}
+
+.guest-input:focus {
+  border-color: #ff7a18;
+  box-shadow: 0 0 0 2px rgba(255,122,24,0.2);
+}
+
+/* Remove default arrows styling (optional) */
+
+.guest-input::-webkit-inner-spin-button,
+.guest-input::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+/* ============================ */
+/* DIVIDER */
+/* ============================ */
+
+.h-sep {
+  height: 1px;
+  background: #ddd;
+}
+
+/* ============================ */
+/* DONE BUTTON */
+/* ============================ */
+
+.done-btn {
+  width: 100%;
+  margin-top: 18px;
+  background: #222;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.done-btn:hover {
+  background: #000;
+}

@@ -1,0 +1,118 @@
+.destinations-section {
+  background-color: #fafafa;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.destinations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.destinations-heading {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #1a1a1a;
+}
+
+.decoration-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 1;
+  pointer-events: none;
+}
+.destinations-grid {
+  display: grid;
+  /* 5 columns to match the uneven layout of the reference image */
+  grid-template-columns: repeat(5, 1fr); 
+  grid-auto-rows: 140px; /* Base height for half-cards */
+  gap: 16px;
+  grid-auto-flow: dense; /* Crucial for filling gaps */
+}
+
+.destination-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Height Logic */
+.card-normal {
+  grid-row: span 1; /* Standard square-ish size */
+}
+
+.card-tall {
+  grid-row: span 2; /* Double height like Coorg/Gokarna */
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+}
+
+.destination-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.destination-overlay {
+  position: absolute;
+  inset: 0;
+  /* Darker gradient at bottom for text readability */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    transparent 100%
+  );
+}
+
+.destination-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  z-index: 2;
+}
+
+.destination-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.price-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.destination-price {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.destination-person {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .destinations-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .destinations-grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 200px;
+  }
+}

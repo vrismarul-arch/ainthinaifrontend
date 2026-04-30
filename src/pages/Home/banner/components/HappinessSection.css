@@ -1,0 +1,140 @@
+/* =========================
+   SECTION
+========================= */
+
+.happiness {
+  background-color: #f3f3f3; /* Soft light grey */
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container */
+.happiness-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.happiness-title {
+  font-size: 30px;
+  font-weight: 400;
+  color: #3a3a3a;
+  margin-bottom: 70px;
+  letter-spacing: 0.5px;
+}
+
+.happiness-title span {
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.happiness-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+}
+
+/* =========================
+   CARD DESIGN (MATCH IMAGE)
+========================= */
+
+.happiness-card {
+  background: #f7f7f7;
+  padding:25px;
+  border-radius: 20px;
+
+  border: 1px solid #e2e2e2;   /* thin light border */
+
+  transition: all 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Soft hover like image */
+.happiness-card:hover {
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transform: translateY(-5px);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.happiness-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   NUMBER
+========================= */
+
+.happiness-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   LABEL
+========================= */
+
+.happiness-card p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* =========================
+   DECORATION IMAGE (BOTTOM LINE)
+========================= */
+
+.decoration-left {
+    position: absolute;
+    bottom: -47px;
+    left: 53px;
+    width: 100%;
+    opacity: 3;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .happiness-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .happiness {
+    padding: 70px 20px 120px 20px;
+  }
+
+  .happiness-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .happiness-title {
+    font-size: 22px;
+  }
+}

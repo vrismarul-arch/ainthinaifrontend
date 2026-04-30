@@ -1,0 +1,85 @@
+.topbar {
+  height: 60px;
+  background: #ffffff;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
+
+.topbar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.topbar-avatar {
+  cursor: pointer;
+}
+
+/* Toggle Button (hidden on desktop) */
+.toggle-btn {
+  display: none;
+  background: #001529;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .toggle-btn {
+    display: block;
+    margin-right: 12px;
+  }
+}
+.topbar {
+  height: 60px;
+  background: #ffffff;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
+
+.topbar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.topbar-avatar {
+  cursor: pointer;
+  color: #341e1c;
+}
+
+/* Toggle Button (hidden on desktop) */
+.toggle-btn {
+  display: none;
+  background: #001529;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .toggle-btn {
+    display: block;
+    margin-right: 12px;
+  }
+}

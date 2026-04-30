@@ -1,0 +1,201 @@
+/* =========================
+   PREMIUM GLASS NAVBAR
+========================= */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+
+  /* iOS glass effect */
+  background: rgba(255, 255, 255, 0) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+  background: transparent !important;
+  border: none !important;
+}
+
+.menu .ant-menu-item {
+  color: rgba(255,255,255,0.9) !important;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.menu .ant-menu-item:hover {
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.right-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.phone {
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+}
+
+/* Host button */
+.logo-image{
+  width: 140px;
+  border-radius: 30px;
+  background: #ffffffe0;
+  height: auto;
+  padding: 20px;
+
+}
+.host-btn {
+  border-radius: 30px;
+  padding: 0 16px;
+  height: 36px;
+
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.host-btn:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(-1px);
+}
+
+/* Login button */
+
+.login-btn {
+  border-radius: 30px;
+  padding: 0 18px;
+  height: 36px;
+
+  background: linear-gradient(90deg,#ff7a18,#ff9f43) !important;
+  border: none !important;
+
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .host-btn {
+    display: none;
+  }
+
+}
+/* =========================
+   GLASS DROPDOWN MENU
+========================= */
+
+/* Main dropdown container */
+.ant-dropdown {
+  padding: 0 !important;
+}
+
+/* Dropdown menu box */
+.ant-dropdown-menu {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-radius: 16px !important;
+  padding: 8px !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
+
+  min-width: 160px;
+}
+
+/* Dropdown items */
+.ant-dropdown-menu-item {
+  border-radius: 12px !important;
+  padding: 10px 14px !important;
+  color: rgb(0, 0, 0) !important;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.ant-dropdown-menu-item:hover {
+  background: rgba(255, 255, 255, 0.815) !important;
+  transform: translateX(4px);
+}
+
+/* Logout (danger) item */
+.ant-dropdown-menu-item-danger {
+  color: #ff6b6b !important;
+}
+
+.ant-dropdown-menu-item-danger:hover {
+  background: rgba(255, 0, 0, 0.15) !important;
+}
+
+/* Smooth animation */
+.ant-slide-up-enter,
+.ant-slide-up-appear {
+  transform: translateY(-5px);
+  opacity: 0;
+}
+
+.ant-slide-up-enter-active,
+.ant-slide-up-appear-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.25s ease;
+}

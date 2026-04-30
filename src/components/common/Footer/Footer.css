@@ -1,0 +1,163 @@
+.site-footer {
+  background: linear-gradient(180deg, #f8e1c2, #e6b97f);
+  padding: 90px 80px 30px;
+  font-size: 14px;
+  color: #3b2a1a;
+}
+
+/* ================= GRID ================= */
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+  gap: 60px;
+}
+
+/* ================= HEADINGS ================= */
+
+.footer-col h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-col h4::after {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: #6b1d00;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+}
+
+/* ================= BRAND ================= */
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 18px;
+}
+
+.footer-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #4a2f1a;
+}
+
+/* ================= LINKS ================= */
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.footer-links li::after {
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: #6b1d00;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  transition: width 0.3s ease;
+}
+
+.footer-links li:hover::after {
+  width: 100%;
+}
+
+.footer-links li:hover {
+  color: #6b1d00;
+  width: fit-content;
+}
+
+/* ================= CONTACT ================= */
+
+.footer-col p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.icon {
+  color: #6b1d00;
+}
+
+/* ================= SOCIAL ================= */
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.social-icons span {
+  font-size: 18px;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #6b1d00;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.social-icons span:hover {
+  background: #6b1d00;
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+/* ================= BOTTOM ================= */
+
+.footer-bottom {
+  margin-top: 70px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(0,0,0,0.15);
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.footer-bottom p {
+  margin: 6px 0;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .site-footer {
+    padding: 70px 40px 30px;
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    padding: 50px 20px 20px;
+  }
+}

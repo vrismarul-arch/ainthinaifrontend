@@ -1,0 +1,238 @@
+/* Location Card */
+.location-card {
+  background: rgba(0, 0, 0, 0.774);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  min-width: 320px;
+  max-width: 400px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Search */
+.location-search {
+  position: relative;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.location-search-input {
+  width: 100%;
+  padding: 10px 35px 10px 12px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.location-search-input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.location-search-input:focus {
+  border-color: #8a574e;
+}
+
+/* Clear Button */
+.clear-search {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.clear-search:hover {
+  color: #fff;
+}
+
+/* ===== SCROLL AREA ===== */
+
+.locations-list {
+  max-height: 120px;      /* Only 2 items visible */
+  overflow-y: auto;
+}
+
+/* Scrollbar */
+
+.locations-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.locations-list::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+}
+
+.locations-list::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+}
+
+.locations-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Firefox */
+.locations-list{
+  scrollbar-width: thin;
+}
+
+/* ===== LOCATION ITEM ===== */
+
+.location-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;   /* Fixed height */
+  width: 100%;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.location-item:last-child {
+  border-bottom: none;
+}
+
+.location-item:hover {
+  background: rgba(255,255,255,0.1);
+  padding-left: 20px;
+}
+
+.location-info{
+  flex:1;
+}
+
+.location-name{
+  display:block;
+  font-size:15px;
+  font-weight:500;
+  color:#000000;
+}
+
+.location-description{
+  display:block;
+  font-size:11px;
+  color:rgba(255,255,255,0.5);
+}
+
+.location-icon{
+  color:rgba(255,255,255,0.4);
+  font-size:18px;
+}
+
+/* Highlight search */
+
+.highlight{
+  background:#8a574e;
+  color:#fff;
+  padding:0 3px;
+  border-radius:3px;
+}
+
+/* No locations */
+
+.no-locations{
+  padding:30px;
+  text-align:center;
+  color:rgba(255,255,255,0.7);
+}
+
+.no-locations p{
+  margin-bottom:6px;
+}
+
+.no-locations small{
+  color:rgba(255,255,255,0.4);
+}
+
+/* Button */
+
+.clear-search-btn{
+  margin-top:14px;
+  padding:8px 18px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  color:#fff;
+  cursor:pointer;
+}
+
+/* Loading */
+
+.loading-spinner{
+  padding:40px;
+  text-align:center;
+  color:rgba(255,255,255,0.7);
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:768px){
+
+.location-card{
+  min-width:280px;
+}
+
+.locations-list{
+  max-height:120px;
+}
+
+.location-item{
+  height:55px;
+}
+
+.location-name{
+  font-size:14px;
+}
+
+}
+
+@media (max-width:480px){
+
+.location-card{
+  min-width:240px;
+}
+
+.location-item{
+  height:50px;
+}
+
+.location-name{
+  font-size:13px;
+}
+
+.location-description{
+  font-size:10px;
+}
+
+}
+
+/* Touch scroll smooth */
+
+@media (hover:none) and (pointer:coarse){
+
+.locations-list{
+  -webkit-overflow-scrolling:touch;
+}
+
+.location-item:hover{
+  background:none;
+}
+
+.location-item:active{
+  background:rgba(255,255,255,0.15);
+}
+
+}
