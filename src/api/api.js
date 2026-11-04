@@ -3,8 +3,8 @@ import axios from "axios";
 const API = axios.create({
 
   //  baseURL: "https://ainthinaibackend.onrender.com",
-   baseURL: "https://skyblue-bat-274458.hostingersite.com",
-  //  baseURL: "http://localhost:5000"
+  //  baseURL: "https://skyblue-bat-274458.hostingersite.com",
+   baseURL: "http://localhost:5000"
 });
 
 API.interceptors.request.use((config) => {

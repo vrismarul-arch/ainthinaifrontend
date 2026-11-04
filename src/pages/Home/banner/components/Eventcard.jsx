@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "./Eventcard.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
@@ -62,7 +62,6 @@ const Eventcard = ({ searchFilters }) => {
     try {
       const res = await API.get("/api/tours");
       
-      // Parse gallery images for each tour
       const processedData = (res.data || []).map(tour => ({
         ...tour,
         galleryImages: parseGalleryImages(tour.gallery_images)
@@ -71,7 +70,6 @@ const Eventcard = ({ searchFilters }) => {
       setEvents(processedData);
       setFilteredEvents(processedData);
       
-      // Initialize current image index for each tour
       const initialIndex = {};
       processedData.forEach(tour => {
         initialIndex[tour.id] = 0;
@@ -83,10 +81,8 @@ const Eventcard = ({ searchFilters }) => {
     }
   };
 
-  // ===== Parse gallery images =====
   const parseGalleryImages = (galleryImages) => {
     if (!galleryImages) return [];
-    
     try {
       if (typeof galleryImages === 'string') {
         const parsed = JSON.parse(galleryImages);
@@ -99,22 +95,15 @@ const Eventcard = ({ searchFilters }) => {
     }
   };
 
-  // ===== Get all images for a tour (main + gallery) =====
   const getAllImages = (tour) => {
     const images = [];
-    
-    if (tour.main_image) {
-      images.push(tour.main_image);
-    }
-    
+    if (tour.main_image) images.push(tour.main_image);
     if (tour.galleryImages && tour.galleryImages.length > 0) {
       images.push(...tour.galleryImages);
     }
-    
     return images;
   };
 
-  // ===== Handle next image =====
   const handleNextImage = (e, tourId, images) => {
     e.stopPropagation();
     setCurrentImageIndex(prev => ({
@@ -123,7 +112,6 @@ const Eventcard = ({ searchFilters }) => {
     }));
   };
 
-  // ===== Handle prev image =====
   const handlePrevImage = (e, tourId, images) => {
     e.stopPropagation();
     setCurrentImageIndex(prev => ({
@@ -132,21 +120,13 @@ const Eventcard = ({ searchFilters }) => {
     }));
   };
 
-  // ===== Calculate duration =====
   const calculateDuration = (tour) => {
-    // You can customize this based on your data
-    // For now, check if duration exists in tour data
     if (tour.duration) return tour.duration;
-    
-    // Default duration based on category or return default
     return "1D / 0N";
   };
 
-  // ===== Filter events by location ONLY =====
   const filterEventsByLocation = (searchLocation) => {
     if (!searchLocation || !events.length) return;
-
-    console.log("🔍 Filtering by location:", searchLocation);
 
     let filtered = [...events];
 
@@ -158,11 +138,9 @@ const Eventcard = ({ searchFilters }) => {
       );
     }
 
-    console.log(`📍 Found ${filtered.length} events in ${searchLocation}`);
     applyFilters(filtered, selectedCategory);
   };
 
-  // ===== Apply category filter =====
   const applyFilters = (eventsList, category) => {
     const filtered = category === "all"
       ? eventsList
@@ -171,7 +149,6 @@ const Eventcard = ({ searchFilters }) => {
     setFilteredEvents(filtered);
   };
 
-  // ===== Handle category change =====
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
     if (searchFilters && searchFilters.location) {
@@ -181,7 +158,6 @@ const Eventcard = ({ searchFilters }) => {
     }
   };
 
-  // ===== Handle navigation with login check =====
   const handleNavigate = (path, requiresAuth = true) => {
     if (requiresAuth && !isLoggedIn) {
       message.warning("Please login to continue");
@@ -191,7 +167,6 @@ const Eventcard = ({ searchFilters }) => {
     }
   };
 
-  // ===== Handle wishlist with login check =====
   const handleWishlistClick = (e, eventId) => {
     e.stopPropagation();
     
@@ -209,19 +184,51 @@ const Eventcard = ({ searchFilters }) => {
     }
   };
 
+  // ===== PARALLAX HANDLER =====
+  const handleParallaxMove = useCallback((e, cardId) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    
+    // Calculate mouse position relative to card (0 to 1)
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    
+    // Convert to -1 to 1 range for movement
+    const moveX = (x - 0.5) * 2;
+    const moveY = (y - 0.5) * 2;
+    
+    // Find the image inside this card
+    const img = card.querySelector('.main-event-image');
+    if (img) {
+      // Apply smooth transform - image moves opposite to cursor for depth
+      // translate values: up to 8px movement
+      img.style.transform = `scale(1.12) translate(${moveX * -8}px, ${moveY * -8}px)`;
+    }
+    
+    // Also move the card slightly for a 3D tilt effect
+    card.style.transform = `translateY(-10px) perspective(1000px) rotateX(${moveY * 2}deg) rotateY(${moveX * -2}deg)`;
+  }, []);
+
+  const handleParallaxLeave = useCallback((e) => {
+    const card = e.currentTarget;
+    const img = card.querySelector('.main-event-image');
+    if (img) {
+      img.style.transform = 'scale(1) translate(0, 0)';
+    }
+    card.style.transform = 'translateY(0) perspective(1000px) rotateX(0) rotateY(0)';
+  }, []);
+
   return (
     <div className="container">
-
-      {/* Category filter */}
-      <CategorySearch 
-        setSelectedThinai={handleCategoryChange} 
-        selectedCategory={selectedCategory}
-      />
 
       <div className="heading-section">
         <div>
           <div className="heading-left">
-            <h1 className="title">Camping Events</h1>
+            <h1 className="title">
+              Exploring the pride of Tamil Heritage
+              <br />
+              <span className="title-tamil">தமிழ் மரபின் பெருமைக்கான தேடல்</span>
+            </h1>
             <Compass size={22} />
           </div>
           <p className="heading-subtitle">
@@ -243,20 +250,24 @@ const Eventcard = ({ searchFilters }) => {
             <div
               key={data.id}
               className="event-card-container"
+              onMouseMove={(e) => handleParallaxMove(e, data.id)}
+              onMouseLeave={handleParallaxLeave}
               onClick={() => handleNavigate(`/product/${data.id}`, true)}
             >
 
               <div className="card-image-wrapper">
                 {/* Image Carousel */}
                 <div className="image-carousel">
-                  <img
-                    src={allImages[currentIndex] || data.main_image || 'https://via.placeholder.com/300x200'}
-                    alt={data.title}
-                    className="main-event-image"
-                    onError={(e) => {
-                      e.target.src = 'https://via.placeholder.com/300x200';
-                    }}
-                  />
+                  <div className="parallax-layer">
+                    <img
+                      src={allImages[currentIndex] || data.main_image || 'https://via.placeholder.com/300x200'}
+                      alt={data.title}
+                      className="main-event-image"
+                      onError={(e) => {
+                        e.target.src = 'https://via.placeholder.com/300x200';
+                      }}
+                    />
+                  </div>
                   
                   {/* Carousel Navigation Buttons */}
                   {hasMultipleImages && (
@@ -276,7 +287,6 @@ const Eventcard = ({ searchFilters }) => {
                         <ChevronRight size={16} />
                       </button>
                       
-                      {/* Image Indicators */}
                       <div className="carousel-indicators">
                         {allImages.map((_, idx) => (
                           <span 
@@ -360,7 +370,6 @@ const Eventcard = ({ searchFilters }) => {
         })}
       </div>
 
-      {/* Explore More Button */}
       {visibleCount < filteredEvents.length && (
         <div className="explore-more-wrapper">
           <button
@@ -372,7 +381,6 @@ const Eventcard = ({ searchFilters }) => {
         </div>
       )}
 
-      {/* No results message */}
       {filteredEvents.length === 0 && (
         <div className="no-results">
           <h3>No events found</h3>

@@ -73,10 +73,11 @@
 
 /* Host button */
 .logo-image{
-  width: 140px;
+  width: 160px;
   border-radius: 30px;
   background: #ffffffe0;
   height: auto;
+  margin-top: 30px;
   padding: 20px;
 
 }

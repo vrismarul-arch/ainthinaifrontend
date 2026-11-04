@@ -4,9 +4,9 @@ import Eventcard from './banner/components/Eventcard'
 import './Home.css'
 import Decoration from './banner/components/Decoration'
 import NewAttractions from './banner/components/NewAttractions'
-import InterestingDestinations from './banner/components/InterestingDestinations'
+// import InterestingDestinations from './banner/components/InterestingDestinations'
 import HowItWorks from './banner/components/HowItWorks'
-import HappinessSection from './banner/components/HappinessSection'
+// import HappinessSection from './banner/components/HappinessSection'
 import AinthinaiSection from './banner/components/AinthinaiSection'
 import CulturalImmersion from './banner/CulturalImmersion'
 import Footer from '../../components/common/Footer/Footer'
@@ -43,7 +43,7 @@ const Home = () => {
       <Decoration />
       <NewAttractions />
       <CulturalImmersion />
-      <HappinessSection />
+      {/* <HappinessSection /> */}
       {/* <InterestingDestinations /> */}
       <HowItWorks />
       <Footer />
